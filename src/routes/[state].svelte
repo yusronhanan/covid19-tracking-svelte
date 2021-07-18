@@ -1,7 +1,9 @@
 <!-- <script context="module"> ==> the call is performed before creating the component. -->
 <script context="module">
   import stateName from "../data/stateName.js";
-  export function preload(page) {
+  import request from "../data/request.js";
+
+  export async function preload(page) {
     const state = page.params["state"];
 
     if (stateName.find((s) => s.abbreviation === state) === undefined) {
@@ -10,8 +12,10 @@
     }
     // console.log(page);
     try {
+      const stats = await request.stateStats(state);
       //   throw new Error("this is bad");
-      return { state };
+      console.log("stats", stats);
+      return { state, stats };
     } catch (error) {
       this.error(500, "There was an error in calling the API");
       return;
@@ -23,6 +27,7 @@
   import CovidStat from "../components/CovidStat.svelte";
   import CovidChart from "../components/CovidChart.svelte";
   export let state;
+  export let stats;
 </script>
 
 <svelte:head>
@@ -34,5 +39,5 @@
   </div>
 </div>
 
-<CovidStat />
+<CovidStat usStats={stats} />
 <CovidChart />

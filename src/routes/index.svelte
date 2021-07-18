@@ -30,9 +30,9 @@
     <h1>Covid-19 US Tracker</h1>
   </div>
 </div>
-<TableContainer />
 <CovidStat {usStats} />
 <CovidChart />
+<TableContainer />
 
 <style>
 </style>
