@@ -27,7 +27,7 @@
   </div>
 </div>
 <TableContainer />
-<CovidStat />
+<CovidStat {usStats} />
 <CovidChart />
 
 <style>
