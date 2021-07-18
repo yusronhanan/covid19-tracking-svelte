@@ -17,7 +17,7 @@
 </svelte:head>
 <div class="section header">
   <div class="container">
-    <h1>Covid-19 US Tracke - {state}r</h1>
+    <h1>Covid-19 US Tracker - {state}</h1>
   </div>
 </div>
 

@@ -1,7 +1,21 @@
+<script context="module">
+  import request from "../data/request.js";
+  export let usStats;
+
+  export async function preload() {
+    try {
+      usStats = await request.usStats();
+      return usStats;
+    } catch (error) {}
+  }
+</script>
+
 <script>
   import TableContainer from "../components/TableContainer.svelte";
   import CovidStat from "../components/CovidStat.svelte";
   import CovidChart from "../components/CovidChart.svelte";
+
+  console.log("usStats", usStats);
 </script>
 
 <svelte:head>
