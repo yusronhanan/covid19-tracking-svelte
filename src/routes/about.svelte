@@ -1,1 +1,1 @@
-<svelte:head />
+<svelte:head>About</svelte:head>
