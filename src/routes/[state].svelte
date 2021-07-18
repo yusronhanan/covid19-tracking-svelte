@@ -14,7 +14,7 @@
     try {
       const stats = await request.stateStats(state);
       //   throw new Error("this is bad");
-      console.log("stats", stats);
+      // console.log("stats", stats);
       return { state, stats };
     } catch (error) {
       this.error(500, "There was an error in calling the API");

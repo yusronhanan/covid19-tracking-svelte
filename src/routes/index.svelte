@@ -1,12 +1,12 @@
 <script context="module">
   import request from "../data/request.js";
-  export let usStats;
 
   export async function preload() {
     try {
       //   throw new Error("this is bad");
-      usStats = await request.usStats();
-      return usStats;
+      const usStats = await request.usStats();
+      const historic = await request.historicUs();
+      return { usStats, historic };
     } catch (error) {
       this.error(500, "There was an error in calling the API");
       return;
@@ -18,8 +18,10 @@
   import TableContainer from "../components/TableContainer.svelte";
   import CovidStat from "../components/CovidStat.svelte";
   import CovidChart from "../components/CovidChart.svelte";
-
-  console.log("usStats", usStats);
+  export let usStats;
+  export let historic;
+  console.log(historic);
+  // console.log("usStats", usStats);
 </script>
 
 <svelte:head>
