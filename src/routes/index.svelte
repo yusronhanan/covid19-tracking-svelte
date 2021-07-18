@@ -4,9 +4,13 @@
 
   export async function preload() {
     try {
+      //   throw new Error("this is bad");
       usStats = await request.usStats();
       return usStats;
-    } catch (error) {}
+    } catch (error) {
+      this.error(500, "There was an error in calling the API");
+      return;
+    }
   }
 </script>
 
