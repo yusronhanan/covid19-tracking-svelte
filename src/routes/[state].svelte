@@ -12,9 +12,14 @@
   export let state;
 </script>
 
-<h1>
-  {state}
-</h1>
+<svelte:head>
+  <title>Covid US Tracking App - {state}</title>
+</svelte:head>
+<div class="section header">
+  <div class="container">
+    <h1>Covid-19 US Tracke - {state}r</h1>
+  </div>
+</div>
 
 <CovidStat />
 <CovidChart />

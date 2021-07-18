@@ -5,9 +5,13 @@
 </script>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Covid US Tracking App</title>
 </svelte:head>
-
+<div class="section header">
+  <div class="container">
+    <h1>Covid-19 US Tracker</h1>
+  </div>
+</div>
 <TableContainer />
 <CovidStat />
 <CovidChart />
